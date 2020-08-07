@@ -7,9 +7,11 @@ const moment = require('moment');
 const EMPTY_MD5 = '38cf60883465598a278011fac087d643';
 
 const inputDir = path.join(__dirname, '..','input');
-const outPutDir = path.join(__dirname, '..','output', moment().format('YYYYMMDD_HHmmssms'));
+const outPutDir = path.join(__dirname, '..','output', );
+
+fs.mkdirSync(inputDir);
 fs.mkdirSync(outPutDir);
-console.log('mkdir ', outPutDir)
+fs.mkdirSync(path.join(outPutDir, moment().format('YYYYMMDD_HHmmssms')));
 
 const pdf2jpg = async(filename) => {
 
